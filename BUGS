@@ -1,0 +1,85 @@
+Please send bugs and patches to;
+    * Alper Akcan (anhanguera)
+        mail : distch@hotmail.com
+	icq  : 651561
+    
+Known bugs;
+
+* tetris: (Alper)
+    1. durmadan change buttonuna basilirsa, hayvancasina(!!), tetro_xx son
+    noktasinda kayboluyor (oyle kaybolmak degil, bir sonraki moduna geciyor
+    (saat yonunun tersine donuyoruz), geciyor ama siliniyor hemen(H yi
+    gecebiliyor bu)) ama orda duruyor(orda duran da bir onceki hali, degismis
+    hali degil). matrix de var en azindan.
+    
+    sanirim duzelttim bunu, daha cok denemek lazim.
+    
+    2. oyun kaybedildiginde, mekan doldugunda.. son tetro_xx, sanki yer varmis,
+    her yer bosmus gibi, en asagiya kadar oylece ekrani doldurarak iniyor,
+    clean_tetro_xx calismiyor(bu dogru), draw_tetro_xx calisiyor(bu yanlis, hem
+    calisiyor olmasi yanlis, hem de kulliyen yanlis, oralar dolu bilader..).
+    1 gunde yazilan 40k lik code bu kadar olur, calistigina sukrediyorum. Super
+    bir adamim ben ya ;)
+    duzeltmeye niyetim yok yakin zamanda.
+        
+    2. sorunun sebebi;
+    clan_tetro_xx lerde, if (y<=H) yada oyle bir sey koymustum; o y yi cikan,
+    cikacak olan tetronun height i ne gore yabmasi lazim, sadece y yapiyor.
+    bunu duzeltmeye usenmemem lazim, cok aptal bir sorun. goren olursa acaib
+    salak kod yaziyorum sanacak, yaziyorum ayri. bu 1. sorunun da sebebi
+    olabilir, ama duzelttim sanirim. demin gordugume gore 2. sorun daha baska
+    bir sey; oyun bitmesine yakin (son tetro da) ilk cikis yerinden cikan tetro
+    nedense martix te x i W-1 ve 0 sandi. ama oralari draw lamadi, sadece
+    matrix te oralari yazmis, ekranda dogru yerleri drawluyor, gozden kacmasi
+    dogal.
+    
+    3. sorun degil ama olsun, kodun temizlenmesi lazim, gereginden fazla yer
+    kapliyor. bununla en kisa zamanda ilgilenicem.
+    
+    sadece macrolar kaldi temizlenicek, onlari diger oyunlarla da kullanilacak
+    hale getirmek, fonksiyon yapmak, yerden kazanmak lazim.
+
+* mp3lib: (Alper)
+    mp3 dosyasinin baslangic kismi 196kbit veya daha ustundeyse, onun mpeg
+    dosyasi olmadigini iddia ediyor. bu benim mp3_initimin hatasi sanirim.
+    init test yapmadan super calinir sanirim dosyalar..
+    yaptim (belki de yapmamisimdir, hatirlamiyorum), ole de olmuyor, bole hic
+    olmuyor. ama mpeg init yapmam lazim, her dosyanin hz si bit rate i ayni
+    degil, ses kartini ona gore ayarlamam lazim. iki ucu boklu degnek. zaten
+    hangi dangalak zihniyet 196kbit mp3 yapar onu da anlamam, mp3 dosyalari
+    yerden kazanmak icindir.. ayrica insan kulagi 128kbit ustunu zaten duyamaz.
+    duyuyorum diyen yalancidir, dombilidir, soyle boyledir.
+    
+    mpglib i biraz duzelttim bu is icin, ama daha tam degil.
+
+* mp3.c: (Alper)
+    mpeg 2 layerI,II,III calarken elapsed ve remained time lari dogru
+    hesaplayamiyor. bunun sebebini gercekten anlamadim. cunku onlari dosyanin
+    buyuklugu ile o zamana kadar acilani oranlayarak buluyorum (dogru olan da
+    bu zaten). hadi mpeg dosyalari sondan basliyor diyelim (eger oyleyse bu
+    format kesin MS nin basinin altindan cikmistir, adamlar bmp yi bile ters
+    duz edip yaziyorlar dosyaya..) o zaman tamam sorun bende olur. ama sondan
+    basliyor olsa zaten tersten caliyor olmam lazim cunku ben dosyayi read()
+    le bastan okuyorum.. bastan sona dogru, soldan saga yani, araplar gibi
+    degil, MS gibi hic degil..
+
+* readbmp.c (Alper)
+    ben butun formatlarini acabildigimi zannediyordum bmp nin, ki 20 ye yakin
+    formatini da aciyorum, ama 16M renkte siciyormus kod.. ;) bir de kucuk
+    dosyalarda siciyor, 13x12 mesela. 26x12 de sicmiyor.
+    hic sicmasin istiyorum.
+    gerci bmp olayini hic kullanmiyacagim ama olsun, insam adam gibi calissin
+    istiyor.
+
+* kbd.c (Alper)
+    bu aslinda bug degil, bir eksiklik, ama duzelmiyor o zaman bocuktur.
+    klavyede tusa basili tutunca, sadece bir dafa okumasini istiyorum,
+    basildigi sure boyunca degil.. istedim, denedim ama olmadi..
+    nedense key_old gibi bir static variable ile if lemek bi halta yaramiyor,
+    bunun sebebini hic anlamadim (tusa basili tutunca, bir tus, bir 0 yazsa
+    anlardim ama ole yapmiyor).
+
+* mineseeper.c (Alper)
+    bos kutuya basildiginda etrafindaki bos kutularida temizlemesini istiyor
+    millet, bence temizlememesi daha bir heyecan katiyor oyuna, ve daha cok
+    dikkat gerektiriyor, bunu opsiyonel yapmak iyi bir fikir olabilir.
