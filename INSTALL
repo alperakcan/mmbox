@@ -1,0 +1,6 @@
+Look src/Make.inc for avaible defines
+
+Then just;
+    make
+    make install
+    tetromino

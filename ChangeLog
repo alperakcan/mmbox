@@ -1,0 +1,319 @@
+Tue Jul  8 00:13:56 2003
+	* : Some changes to publish ;)
+
+Thu Sep 19 06:26:47 08.19.2002
+	* : first stable.
+
+Tue Sep 17 05:24:35 08.17.2002
+	* jbox.c : fixed games minimize bug.
+
+Mon Sep 16 14:58:29 08.16.2002
+	* clock.c : added an ugly function to set time, date. needs to be
+	wrapped.
+
+Fri Aug 16 06:58:51 08.16.2002
+	* rc.file.c & .h : ;)
+	* main_*.h : re-wrtitten.
+	* font.c : ;))
+	* tetris.c : gives bonus while tetro_xx is tetromino_logo.
+	* *. : some changes, mino bug fixes.
+
+Thu Aug 15 06:41:43 08.15.2002
+	* ir.c : added a handsome function, gui to chage ir codes.
+	* cd.c : kernel 2.4.x cant understand tray open?! so we will use cdrom
+	icon to get cddb info as before. added multiple cd rom support.
+
+Thu Aug 15 03:38:54 08.15.2002
+	* font.c : support for turkish fonts, really home brew ;).
+	* *.c : minor bug fixes.
+
+Mon Aug 12 05:26:38 08.12.2002
+	* cd.c : added eject support and tray is locked while playing.
+	* main.h : made moduler.
+	* minesweeper.c : i cant remember what i did.
+
+Fri Aug  9 13:50:07 08.09.2002
+	* main.c : added vga_rininbackground routins, only avaible ifndef
+	EMBEDDED.
+
+Thu Aug  8 19:50:35 08.08.2002
+	* main.h : added tiny language support.
+	* *.c : modified to work with lang defs.
+	* tetris.c : some minor bug fixes.
+	* mines.c : added minimize macro.
+	* games.h : moved minimize macro in this. to save space. macro should
+	be written as function to save more space.
+	* cd, mp3, jbox, updater.c`s : some routins for shuffle and repeat.
+
+Thu Aug  8 03:56:54 08.08.2002
+	* *.c : minor bug fixes.
+	* tetris.c : added minimize macro, should be re-written.
+
+Wed Aug  7 17:20:13 08.07.2002
+	* jbox/games/tetris.c : wrapped (~= 30K).
+
+Tue Aug  6 19:24:57 08.06.2002
+	* jbox/cd.c : fixed updater bug.
+	* jbox/libcda/cda.c : removed subchannel datas.. they cant be used with
+	fork.
+	* jbox/mp3.c, jbox.c, cd.c libcda/cda.c : modified to set position of
+	playing file from posbar.
+	* libirman/ir.c : fixed random code genarating bug.
+	* jbox/mp3.c : fixed matrix segfault.
+	* jbox/games/tetris.c : fixed pause bug.
+
+Mon Aug  5 04:37:35 08.05.2002
+	* jbox/tetris.c : added legend, level, score.
+
+Mon Aug  5 01:12:58 08.05.2002
+	* jbox/mp3.c : bug fixes (totalfile <= 0 bug).
+	* jbox/playlist.c : bug fixes (popup bug, playlist_clear() bug).
+	* jbox/games/tetris.c : wrapped a bit, needs more.
+	* *.c : designed to work with UPDATERS() macro.
+	* updater.c : position bar.
+	* jbox/jbox.c, jbox/sanalyzer.c, dirbrowser.c, mp3.c : they dont send
+	sigstop from now on, just changes the (volatile int) verbose.
+	* main.h : added updaters() macro.
+	* jbox/sanalyzer.c : added a stupid color change....
+	* : ? i cant remmember whole.
+
+Sat Aug  3 20:19:57 08.03.2002
+	* jbox/jbox.c, jbox/playlist.c : buttonlar super calisiyor,
+	eksikler var (shuffle, repeat, ne bilim falan filan..).
+	* vcd : vcd ye yaklastik, vcd bile seyretttik...
+
+Fri Aug  2 00:56:54 08.02.2002
+	* jbox/games/minesweeper.c : minesweeper ;) works very good.
+
+Thu Aug  1 01:58:03 08.01.2002
+	* version : it is time to change version number. 0.2.0 ;)
+	* gui : wouw!!! thanks to baris for painting my drawings.
+	* jbox/games/tetris.c : tetris ;) works very good.
+
+Tue Jul 30 00:02:54 07.30.2002
+	* : yok boyle birsey, kernele bttv destegi vereyim dedim, module olarak
+	derledim, makina bir daha acilmadi. neyse ona cozum buldum, hd yi bir
+	daha okumadi. baska linux kurayim dedim cd den, yuklemenin ortasinda cd
+	bozuldu. eski versiyon slackware yuklerim o zaman dedim -kimse
+	durduramaz beni-, ama durdurdu. yukledikten sonra boot ettim,
+	`hardiskin var mi senin?` dedi. nereye kurdugunu saniyorsa... neyse
+	kazali belali kurdum, bu seferde svgalib 2.2.18 in devfs sinde
+	calismadi, 2.4.16 kurdum bende, bu seferde modutils 2.4.x icin
+	olmadigindan modulleri yukleyemedi. tekrar 2.2.18 kurdum. falan filan.
+	projenin yetismesi gerekior urasamiyorum da simdi.
+
+Sat Jul 27 20:50:21 07.27.2002
+	* libirman/ir.c : to handle ir codes.
+
+Sat Jul 27 05:22:46 07.27.2002
+	* libirman : ;)
+	* cd.c : minor bug-fixes.
+	* mp3.c : minor bug-fixes.
+	* playlist.c : added cdplaylisthandler() or something like that.
+	* utils.c : changed someting(?) in draw_popup.
+
+Fri Jul 26 01:00:39 07.26.2002
+	* main.h : added more defines.
+	* almost all c`s : changed them to work with color defines.
+	* playlist.c & dirbrowser.c : both needs to be wrapped, may be complete
+	re-write.
+	* utils.c : draw_popup now returns int, not char.
+	* playlist.c : added rightbutton popup to mp3playlisthandler.
+	* jbox/*.c : added ?boxuninit().
+	* cd.c : cdrom_lockdoor...
+
+Sun Jul 21 18:54:21 07.21.2002
+	* playlist.c : playlist_show(), playlist_fd is now a global variable.
+	* mp3.c : minor bug fixes.
+	* jbox.c : minor bug fixes.
+	* dirbrowser.c : needs to be re-written.
+
+Thu Jul 18 14:46:25 07.18.2002
+	* audio.c : fixed dsp_set.
+	* mp3.c : minor bug fixes.
+	* cd.c : minor bugfixes.
+	* jbox.c : minor bugfixes.
+	* libmp3/common.c : fixed crash on stream error.
+	* libmp3/interface.c : fixed crash on stream error.
+	* libmp3/*.c : so many fixes.
+
+Tue Jul 16 03:03:34 07.16.2002
+	* kbd.c : ;)
+	* mp3.c : fixed junk problem. (signal 8)
+
+Mon Jul 15 20:30:17 07.15.2002
+	* jbox/*.c : fixed lots of problems.
+	* dirbrowser.c : fixed crash.
+	* sanalyzer.c : done with pipe.
+	* updater.c : ;)
+
+Wed Jul 10 03:35:27 07.10.2002
+	* sanalyzer.c & fft.c : simple spectrum analyzer. both needs to be
+	fixed.
+
+Mon Jul  8 23:32:52 07.08.2002
+	* cd.c : minor bug fixes.
+	* mp3.c : minor bug fixes.
+	* playlist.c : some simple playlist file options.
+
+Tue Jul  2 19:09:44 07.02.2002
+	* libcda, libid3, libmp3 : moved to jbox dir.
+
+Tue Jul  2 00:30:47 07.02.2002 (0.1.8)
+	* *.c : less CodingStyle ;)
+	* lpthreads : changed with fork.
+	* dirbrowser.c : minor bug fixes.
+	* utils.c : info_box() & a function to set sigaction.
+	* Makefile : ;)
+
+Fri Jun 28 19:01:32 06.28.2002
+	* dirbrowser.c : simple buttons
+
+Fri Jun 28 02:56:57 06.28.2002
+	* utils.c : some drawing utils. buttons, boxes, etc.
+	* dirbrowser.c : wrapped ;)
+
+Wed Jun 26 22:45:23 06.26.2002
+	* dirbrowser.c : wrapped, needs more.
+
+Wed Jun 26 06:38:38 06.26.2002
+	* cd.c : name changed
+	* mp3.c : name changed ;) mp3_printfinfo()
+	* audio.c : init_dsp => dsp_init, dsp_set() 
+
+Wed Jun 26 01:42:42 06.26.2002
+	* playmp3.c : too many corrections.
+	* playcd.c : track selecting error fixed.
+	* cddb.c : cd_cddbid() ;)
+
+Mon Jun 24 17:16:20 06.24.2002
+	* jbox : mp3_getinfo(), simple but nice ;)
+
+Sun Jun 23 01:50:13 06.23.2002
+	* 0.1.0a : Lets play ;)
+	* id3.c : simple tag.v1 reader & editor.
+
+Sat Jun 22 20:02:15 06.22.2002
+	* audio.c : init_dsp() & mixet_set(int vol)
+
+Sat Jun 22 03:05:02 06.22.2002
+	* cda.c : works nice.
+
+Thu Jun 20 02:22:54 06.20.2002
+	* libcda : ;) A library to read "DIGITAL AUDIO" from cdrom. reading
+	digital audio needs some cpu usage but, needs no cable attached to the
+	soundcard.
+
+Thu Jun  6 21:48:10 06.06.2002
+	* dirbrowser.c&.h : needs to be wrapped.
+
+Thu Jun  6 05:25:28 06.06.2002
+	* dirbrowser.c : complete re-write, works fine.
+
+Sat Jun  1 03:10:32 06.01.2002
+	* dirbrowser.c : simple.
+
+Wed May 29 20:35:03 05.29.2002
+	* mouse.c : Complete re-write. A handsome mousecursor added.
+	* font.c : Complete re-write.
+	* utils.c : PANIC, TELLME mocros for debuging.
+	* cputimehandler.c : no need.
+
+Wed May 29 00:30:23 05.29.2002
+	* : Sildim her bi boku, Bu mudur, bu dur. Yine, evet yine ;)
+	Bastan, daha bi guzel, daha bi yakisikli, daha bi kucuk, daha bi cilgin.
+
+Sat Apr  6 03:59:23 04.06.2002
+	* jbox.c : draw_playlist()
+	* playlist.c : draw_directory_browser(), directory_browser()
+
+Thu Apr  4 00:30:00 04.04.2002
+	* playlist.c &.h : dizin icindeki diger dizin ve dosyalari array e 
+	yazan super fonksiyonlar butunlerini koydum icine, harikayim kimse
+	tutamaz beni.
+
+Mon Apr  1 04:35:36 04.01.2002
+	* screens.h : theme ve coordinates structure lari kaldirdim, yerden
+	kazanalim biraz ve de memden. %0.9 oldu %0.7.
+	* mousecursors.h : yok artik bole bi dosya.
+	* mouse.c : _mouse_update(char *cursor_type) artik _mouse_update(void)
+	* rcfile.c : artik theme falan urasmiyacak.
+	* uyku : felaket uykum var. sabah 9:30 da da 'Dokum Prensipleri' dersi
+	var ayvayi yedim.
+
+Fri Mar 29 17:30:15 03.29.2002
+	* audio.c : simple mixer functions. volume +,- ; balance +,-.
+	* jbox.c : macros for skin files.
+	* jbox_mp3.h : ;)
+
+Thu Mar 28 18:04:44 03.28.2002
+	* jbox.c : re-written.
+
+Wed Mar 27 05:37 03.27.2002
+	* jbox.c : mouse_update() gets mad while forked child exiting.
+	fork() changed with pthreads.
+	
+	* ChangeLog : new format looks handsome ;)
+    
+03.26.2002 06:43
+    * almost done with mpeg layer 1,2,3 player.
+
+03.04.2002
+    04:10
+    * after 1+ months here we are, again.
+    * mp3 support added.
+    
+01.29.2002
+    05:02
+    * as from today changelog file format will be mm.dd.yyyy.
+    * too many changes, i cant write all of them.
+    
+dd.mm.yyyy
+ 
+28.01.2002
+    02:24
+    * gui changed again, and again...
+    * lots of things have changed. almost *.c s
+    
+27.01.2002
+    17:48
+    * date added.
+    * area for dock icons.
+    
+26.01.2002
+    22:30
+    * corrections to clock.
+    * added an ugly theme function, works fine.
+    * rcfile.c&h
+    
+26.01.2002
+    04:14
+    * gui changed.
+    * clock finished, it looks like KDE's digital style as Caglar(Java) loves.
+	men we love KDE, and adore its coders. they know what they are doing.
+    * theme suport will be a very hard option to handle,
+	because of hard-coding. it is my fault. i'll look after it.
+    * there is no ts_scanline function, anymore.
+    * ts_drawtext function rewritten for transparency.. works good.
+
+18.01.2002
+    05:05
+    * mouse.c&.h written from beginning.
+	there will be no problem with mouse anymore. I suppose ;)
+
+14.01.2002
+    23:10
+    * mouse support has finished.
+	it has some snapshot problems.
+
+11.01.2002
+    18:17
+    * wrote a simple Makefile to do things easier and quicker.
+	will work on configure etc.. later.
+    15:25
+    * still learning svgalib.
+    * cpu time handling added against <huge> cpu usage. "cputimehandler.h"
+    * done with bmp files. TS_showbmpfile() funtion. "readbmp.h"
+	rather slow, does not writes to a buffer but directly to the screen.
+    * almost done with fonts TS_drawtext() function. "fonts.h"
+	background color: suxs...

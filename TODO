@@ -1,0 +1,25 @@
+This is a stopped project.
+
+Coming ;)
+    * ID3 v2
+    * CDDB (must ve finished)
+    * Net connection (dial-up and ethernet)
+    * PNG, JPEG, GIF, BMP(16M32) support.
+    * audio mixer (a better one)
+    * a better dsp handler
+    * equalizer
+    * MPEG-1 (a.k.a VCD) video
+    * TV/Radio (bttv-848,878)
+    * (Full)Support for free type with mpeg layer 1,2,3.
+    * IR kernel module with /dev/irman device.
+    * IR kernel module devfs support.
+    * Kernel module loader.
+    * A small partition table manipulation.
+
+Soon,
+    * ICQ (v8)
+    * MAIL
+    * IRC Client
+    * MS, AOL, Yahoo messenger
+    * WWW
+    * JVM (a lite one)
